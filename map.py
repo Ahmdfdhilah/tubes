@@ -1,6 +1,10 @@
 import pygame as pg
+<<<<<<< HEAD
 
 _ = False
+=======
+#minimap untuk map
+>>>>>>> 85b8e98d710b8286ecf75c5777903c88d1fa8ef4
 mini_map = [
 #   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 #   [1, _, _, _, _, _, _, _, _, _, _, _, _, _, 1],
