@@ -11,6 +11,7 @@ from weapon import *
 from sound import *
 from npc import *
 from path_finding import *
+from hud import *
 
 class Game:
     def __init__(self):
@@ -32,6 +33,7 @@ class Game:
         self.object_handler = ObjectsHandler(self)
         self.weapon = weapon(self)
         self.sound = Sound(self)
+        print(len(self.object_handler.npc_list))
         self.pathfinding = PathFinding(self)
         
     def update(self):
@@ -53,12 +55,13 @@ class Game:
     def check_events(self):
         self.global_trigger = False
         for event in pg.event.get():
-            if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
+            if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE) or len(self.object_handler.npc_list)<1:
                 pg.QUIT()
                 sys.exit()
             elif event.type == self.global_event:
                 self.global_trigger = True
             self.player.single_fire_event(event)
+            self.player.reloading(event)
 
     def run(self):
         while True:

@@ -14,7 +14,7 @@ class ObjectsHandler:
         self.npc_pos = {}
 
         # Sprite Map
-        add_sprite(SpriteObj(game))
+        # add_sprite(SpriteObj(game))
         add_sprite(AnimatedSprite(game))
         add_sprite(AnimatedSprite(game, pos=(7, 2)))
         add_sprite(AnimatedSprite(game, pos=(2, 4)))
@@ -22,7 +22,18 @@ class ObjectsHandler:
 
         # NPC map
         add_npc(NPC(game))
-        add_npc(NPC(game, pos = (6.5, 3.5)))
+        add_npc(NPC(game, pos=(4.5, 25.5)))
+        add_npc(NPC(game, pos=(23, 28)))
+        # add_npc(NPC(game))
+        # add_npc(NPC(game))
+        # add_npc(NPC(game))
+        # add_npc(NPC(game))
+        # add_npc(NPC(game))
+        # add_npc(NPC(game))
+        # add_npc(NPC(game))
+        # add_npc(NPC(game))
+
+        # add_npc(NPC(game, pos = (6.5, 3.5)))
 
 
     def update(self):

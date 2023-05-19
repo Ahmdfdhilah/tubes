@@ -3,7 +3,7 @@ from random import randint, random, choice
 
 class NPC(AnimatedSprite):
     def __init__(self, game, path='sprite/NPC/CZ/0.png',
-                 pos=(2, 2), scale=.6, shift=.38, animation_time=180):
+                 pos=(5.5, 5.5), scale=.6, shift=.38, animation_time=180):
         super().__init__(game, path, pos, scale, shift, animation_time)
         self.attack_images = self.get_images(self.path + '/shot')
         self.death_images = self.get_images(self.path + '/dead')
@@ -53,6 +53,9 @@ class NPC(AnimatedSprite):
     def attack(self):
         if self.animation_trigger:
             self.game.sound.npc_shot.play()
+            if random() < self.accu:
+                self.game.player.get_damage(self.damage)
+
 
     def animate_death(self):
         if not self.alive:
@@ -76,6 +79,7 @@ class NPC(AnimatedSprite):
                 self.check_health()
 
     def check_health(self):
+        print(self.hp)
         if self.hp < 1:
             self.alive = False
             self.game.sound.npc_death.play()
@@ -88,21 +92,20 @@ class NPC(AnimatedSprite):
             if self.pain:
                 self.animate_pain()
 
-            elif self.ray_cast_value:
-                self.player_search_trigger = True
+            # elif self.ray_cast_value:
+            #     self.player_search_trigger = True
 
-                if self.dist < self.attack_dist:
-                    self.animate(self.attack_images)
-                    self.attack()
-                else:
-                    self.animate(self.walk_images)
-                    self.movement()
+            #     if self.dist < self.attack_dist:
+            #         self.animate(self.attack_images)
+            #         self.attack()
+            #     else:
+            #         self.animate(self.walk_images)
+            #         self.movement()
 
-            elif self.player_search_trigger:
-                self.animate(self.walk_images)
-                self.movement()
-                
-
+            # elif self.player_search_trigger:
+            #     self.animate(self.walk_images)
+            #     self.movement()
+        
             else:
                 self.animate(self.idle_images)
         else:

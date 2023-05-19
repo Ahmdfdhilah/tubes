@@ -1,6 +1,7 @@
 import pygame as pg
 import math
 from settings import *
+from weapon import *
 
 class Player:
     def __init__(self, game):
@@ -8,13 +9,25 @@ class Player:
         self.x, self.y = PLAYER_POS
         self.angle = PLAYER_ANGLE
         self.shot = False
+        self.hp = PLAYER_MAX_HP
+
+    def get_damage(self, damage):
+        self.hp -= damage
+        # self.game.object_renderer.player_damage()
+        self.game.sound.player_pain.play()
 
     def single_fire_event(self, event):
         if event.type == pg.MOUSEBUTTONDOWN:
-            if event.button == 1 and not self.shot and not self.game.weapon.reloading:
+            if event.button == 1 and not self.shot and not self.game.weapon.reloading and not self.game.weapon.bullet_empty:
+                self.game.weapon.check_bullet()
+                self.game.weapon.shot()
                 self.game.sound.colt.play()
-                self.shot = True
                 self.game.weapon.reloading = True
+
+    def reloading(self, event):
+        if event.type == pg.K_r:
+            if event.button == 1:
+                self.game.weapon.reload()
 
     def movement(self):
         sin_a = math.sin(self.angle)
@@ -37,6 +50,9 @@ class Player:
         if keys[pg.K_d]:
             dx += -speed_sin
             dy += speed_cos
+
+        if keys[pg.K_r]:
+            self.game.weapon.reload()
             
         self.check_wall_collision(dx, dy)
 

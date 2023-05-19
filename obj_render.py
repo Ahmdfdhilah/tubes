@@ -35,6 +35,7 @@ class ObjectRenderer:
     
     def load_wall_textures(self):
         return{
-            1: self.get_texture("textures/walls/test.jpg")
+            1: self.get_texture("textures/walls/test.jpg"),
+            # 2: self.get_texture("textures/walls/2.png")
         }
 
