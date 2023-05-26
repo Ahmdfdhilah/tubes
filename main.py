@@ -21,102 +21,102 @@ dialog_data = []
 dialog_data_prologue = [
     {
         "text": "Pada Tahun 20XX, Bumi mengalami kekacauan dengan datangnya monster-monster yang ingin mendominasi Bumi",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
     {
         "text": "Para monster sudah menyebar terlalu banyak sehingga populasi manusia saat ini hanya berkisar 20%",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
     {
         "text": "Masih menjadi misteri darimana monster tersebut tetapi diduga ada beberapa orang mencurigakan terlibat",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
     {
         "text": "Manusia yang tersisa bersembunyi di dalam bunker yang dihuni beberapa warga dan ilmuwan",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
     {
         "text": "Para ilmuwan sudah menyiapkan beberapa prajurit uji coba yang sudah dibekukan sebelum bencana terjadi",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
     {
         "text": "Para prajurit tersebut telah di cairkan untuk melawan monster yang sudah mulai menginvasi bumi",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
     {
         "text": "Uhh...dimana ini?",
-        "chara": "ghulwan",
+        "chara": "Ghulwan",
         "character_image": "textures\chara\ghulwan.png",
     },
     {
         "text": "Sudah waktunya bangun ghulwan, dunia sekarang dilanda kekacauan",
-        "chara": "david",
+        "chara": "David",
         "character_image": "textures\chara\david.png",
     },
     {
         "text": "David!? Jadi begitu, jelaskan rinciannya!",
-        "chara": "ghulwan",
+        "chara": "Ghulwan",
         "character_image": "textures\chara\ghulwan.png",
     },
     {
         "text": "David menjelaskan keadaan bumi dan bagaimana dia sudah dibangunkan",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
     {
         "text": "Bagaimana dengan prajurit lain?",
-        "chara": "ghulwan",
+        "chara": "Ghulwan",
         "character_image": "textures\chara\ghulwan.png",
     },
     {
         "text": "Mereka sudah menjalani proses pencairan dan sedang menunggu di luar",
-        "chara": "david",
+        "chara": "David",
         "character_image": "textures\chara\david.png",
     },
     {
         "text": "Baiklah ayo kita temui mereka",
-        "chara": "ghulwan",
+        "chara": "Ghulwan",
         "character_image": "textures\chara\ghulwan.png",
     },
     {
         "text": "Wah lihat siapa yang baru terbangun",
-        "chara": "ihsan",
+        "chara": "Ihsan",
         "character_image": "textures\chara\ihsan.png",
     },
     {
         "text": "Sekarang akhirnya kita lengkap",
-        "chara": "jatmiko",
+        "chara": "Jatmiko",
         "character_image": "textures\chara\jatmiko.png",
     },
     {
         "text": "Haha sepertinya kalian baik-baik saja ya",
-        "chara": "ghulwan",
+        "chara": "Ghulwan",
         "character_image": "textures\chara\ghulwan.png",
     },
     {
         "text": "Waktunya bertugas kah?",
-        "chara": "david",
+        "chara": "David",
         "character_image": "textures\chara\david.png",
     },
     {
         "text": "Santai dulu ga sih?",
-        "chara": "jatmiko",
+        "chara": "Jatmiko",
         "character_image": "textures\chara\jatmiko.png",
     },
     {
         "text": "Iya, selama kita di bunker pasti akan ama-",
-        "chara": "ihsan",
+        "chara": "Ihsan",
         "character_image": "textures\chara\ihsan.png",
     },
     {
         "text": "Tiba-tiba terdengar suara ledakan dan sirine berbunyi diiringi para tentara dan beberapa monster menerobos bunker",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
     {
@@ -126,32 +126,32 @@ dialog_data_prologue = [
     },
     {
         "text": "Dia kan Professor Andre, ilmuwan terbaik sebelum kita dibekukan",
-        "chara": "ihsan",
+        "chara": "Ihsan",
         "character_image": "textures\chara\ihsan.png",
     },
     {
         "text": "Kudengar dia hilang secara misterius",
-        "chara": "jatmiko",
+        "chara": "Jatmiko",
         "character_image": "textures\chara\jatmiko.png",
     },
     {
         "text": "Sepertinya kita tahu alasannya, dan harus menghentikannya",
-        "chara": "ghulwan",
+        "chara": "Ghulwan",
         "character_image": "textures\chara\ghulwan.png",
     },
     {
         "text": "Waduh tapi kita belum makan sama sekali",
-        "chara": "ihsan",
+        "chara": "Ihsan",
         "character_image": "textures\chara\ihsan.png",
     },
     {
         "text": "MAKAN TIDAK PERLU, TARUNG NOMOR SATU!!!",
-        "chara": "david",
+        "chara": "David",
         "character_image": "textures\chara\david.png",
     },
     {
         "text": "Ayo maju!",
-        "chara": "ghulwan",
+        "chara": "Ghulwan",
         "character_image": "textures\chara\ghulwan.png",
     },
 ]
@@ -159,12 +159,12 @@ dialog_data_prologue = [
 dialog_data_epilog = [
     {
         "text": "Huft...Apakah sudah selesai?",
-        "chara": "ghulwan",
+        "chara": "Ghulwan",
         "character_image": "textures\chara\ghulwan.png",
     },
     {
-        "text": "Dimana Andre?",
-        "chara": "jatmiko",
+        "text": "Dimana Prof. Andre?",
+        "chara": "Jatmiko",
         "character_image": "textures\chara\jatmiko.png",
     },
     {
@@ -179,42 +179,42 @@ dialog_data_epilog = [
     },
     {
         "text": "Waduhh...dia kabur",
-        "chara": "david",
+        "chara": "David",
         "character_image": "textures\chara\david.png",
     },
     {
         "text": "Setidaknya kita tahu kalau dialah yang menciptakan monster",
-        "chara": "jatmiko",
+        "chara": "Jatmiko",
         "character_image": "textures\chara\jatmiko.png",
     },
     {
         "text": "Mau tidak mau kita harus keluar bunker kah...",
-        "chara": "ihsan",
+        "chara": "Ihsan",
         "character_image": "textures\chara\ihsan.png",
     },
     {
         "text": "Perjalanan kita masih panjang",
-        "chara": "ghulwan",
+        "chara": "Ghulwan",
         "character_image": "textures\chara\ghulwan.png",
     },
     {
         "text": "Para prajurit berhasil mengalahkan musuh-musuh yang menyerang bunker mereka",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
     {
         "text": "Tetapi, Prof.Andre berhasil kabur dengan membawa sesuatu untuk niat jahatnya",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
     {
         "text": "Para prajurit akan memulai petualangan mereka menghadapi musuh yang lebih berbahaya",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
     {
         "text": "TO BE CONTINUED",
-        "chara": "watcher",
+        "chara": "Watcher",
         "character_image": "textures\chara\watcher.png",
     },
 ]
@@ -232,6 +232,8 @@ class Game:
         self.global_trigger = False
         self.global_event = pg.USEREVENT + 0
         pg.time.set_timer(self.global_event, 40)
+        self.background_music = pg.mixer.Sound(
+            'sound/theme.mp3')
         self.new_game()
         self.dialog_data = dialog_data
 
@@ -239,6 +241,8 @@ class Game:
         get_dialog(self.dialog_data[index])
 
     def new_game(self):
+        self.loss = False
+        self.win = False
         self.map = Map(self)
         self.player = Player(self)
         self.object_renderer = ObjectRenderer(self)
@@ -248,12 +252,27 @@ class Game:
         self.sound = Sound(self)
         print(len(self.object_handler.npc_list))
         self.pathfinding = PathFinding(self)
+        self.background_music.play(-1, 0, 7000)
+
+    def game_over(self):
+        self.loss = True
+
+    def game_win(self):
+        self.win = True
 
     def update(self):
-        self.player.update()
-        self.raycasting.update()
-        self.object_handler.update()
-        self.weapon.update()
+        if self.loss:
+            self.object_renderer.draw_game_over_image()
+        elif self.win:
+            self.dialog(1)
+            pg.mixer.Sound.stop(self.background_music)
+            pg.mouse.set_visible(True)
+            menu.main_menu()
+        else:
+            self.player.update()
+            self.raycasting.update()
+            self.object_handler.update()
+            self.weapon.update()
         pg.display.flip()
         self.delta_time = self.clock.tick(FPS)
         pg.display.set_caption(f"{self.clock.get_fps() :.1f}")

@@ -22,7 +22,7 @@ def draw_dialog_box(x, y, width, height, border_radius=0):
 
 # Menggambar teks pada kotak dialog
 def draw_text(text, x, y, font_size):
-    text_font = pygame.font.SysFont("Arial", font_size)
+    text_font = pygame.font.SysFont("georgia", font_size)
     words = text.split()
     lines = []
     current_line = ""
@@ -52,23 +52,23 @@ def draw_character(image, x, y):
 def show_dialog(text, character_image, character_name):
     bg_img = pygame.image.load('textures/sky/sky.png')
     screen.blit(pygame.transform.scale(bg_img, (WITDH, HEIGHT)), (0, 0))
-    text_font = pygame.font.SysFont("Arial", 20)
+    text_font = pygame.font.SysFont("georgia", 20)
     # Menggambar kotak dialog di tengah layar
     dialog_x = (WITDH - DIALOG_WIDTH) // 2
     dialog_y = (HEIGHT - DIALOG_HEIGHT) // 2
-    draw_dialog_box(dialog_x, dialog_y, DIALOG_WIDTH, DIALOG_HEIGHT, border_radius=10)
+    draw_dialog_box(dialog_x, dialog_y, DIALOG_WIDTH, DIALOG_HEIGHT, border_radius=50)
 
     # Menggambar teks pada kotak dialog
     text_x = dialog_x + 20
     text_y = dialog_y + 20
-    draw_text(text, text_x, text_y, 40)
+    draw_text(text, text_x, text_y, 35)
 
     # Menggambar nama karakter dalam kotak karakter yang sedang berbicara
     character_name_x = text_x
     character_name_y = text_y - 30  # Meletakkan kotak nama di atas teks dialog
     character_name_width = text_font.size(character_name)[0] + 20  # Menyesuaikan lebar kotak dengan panjang teks nama karakter
     character_name_height = 30
-    draw_dialog_box(character_name_x, character_name_y, character_name_width, character_name_height, border_radius=5)
+    draw_dialog_box(character_name_x, character_name_y, character_name_width, character_name_height, border_radius=10)
     draw_text(character_name, character_name_x + 10, character_name_y + 8, 16)
 
     # Menggambar gambar karakter di sebelah kanan kotak dialog

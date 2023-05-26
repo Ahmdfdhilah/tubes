@@ -37,12 +37,12 @@ class ObjectsHandler:
         # add_sprite(ApiMerah(game, pos=(10.5, 7.5)))
 
         # NPC map
-        add_npc(NPC(game))
-        add_npc(NPC(game, pos=(4.5, 25.5)))
-        add_npc(NPC(game, pos=(23, 28)))
-        add_npc(NPC(game, pos=(21, 2)))
+        # add_npc(NPC(game))
+        # add_npc(NPC(game, pos=(4.5, 25.5)))
+        # add_npc(NPC(game, pos=(23, 28)))
+        # add_npc(NPC(game, pos=(21, 2)))
         add_npc(NPC(game, pos=(3, 2)))
-        add_npc(NPC(game, pos=(18, 12)))
+        # add_npc(NPC(game, pos=(18, 12)))
         
         # add_npc(NPC(game))
         # add_npc(NPC(game))
@@ -50,14 +50,19 @@ class ObjectsHandler:
         # add_npc(NPC(game))
         # add_npc(NPC(game))
 
-        
-
+    def check_win(self):
+        if not len(self.npc_pos):
+            self.game.game_win()
 
     def update(self):
-        self.npc_pos = {npc.map_pos for npc in self.npc_list if npc.alive}
-        [sprite.update() for sprite in self.sprite_list]
-        [npc.update() for npc in self.npc_list]
-
+        for sprite in self.sprite_list:
+            sprite.update()
+        for npc in self.npc_list:
+            npc.update()
+        self.npc_pos = [
+            npc.map_pos for npc in self.npc_list if npc.alive]
+        self.check_win()
+    
     def add_npc(self, npc):
         self.npc_list.append(npc)
 

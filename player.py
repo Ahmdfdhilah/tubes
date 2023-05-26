@@ -10,11 +10,34 @@ class Player:
         self.angle = PLAYER_ANGLE
         self.shot = False
         self.hp = PLAYER_MAX_HP
+        self.get_shot = False
+        self.regen = False
+        self.regen_time = 0
+        self.regen_cd = 800
 
     def get_damage(self, damage):
-        self.hp -= damage
-        # self.game.object_renderer.player_damage()
-        self.game.sound.player_pain.play()
+        if self.hp > 0:
+            self.get_shot = True
+            self.hp -= damage
+            # self.game.object_renderer.player_damage()
+            self.game.sound.player_pain.play()
+            self.check_game_over()
+
+    def regen_hp(self):
+        if not self.regen and self.hp < PLAYER_MAX_HP:
+            self.regen = True
+            self.regen_time = pg.time.get_ticks()
+            self.hp += 1
+
+    def cooldowns(self):
+        current_time = pg.time.get_ticks()
+        if self.regen and current_time - self.regen_time >= self.regen_cd:
+            self.regen = False
+
+    def check_game_over(self):
+        if self.hp <= 0:
+            self.hp = 0
+            self.game.game_over()
 
     def single_fire_event(self, event):
         if event.type == pg.MOUSEBUTTONDOWN:
@@ -87,8 +110,10 @@ class Player:
         self.angle += self.rel * MOUSE_SENS * self.game.delta_time
 
     def update(self):
+        self.cooldowns()
         self.movement()
         self.mouse_control()
+        self.regen_hp()
 
     @property
     def pos(self):

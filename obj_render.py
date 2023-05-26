@@ -16,6 +16,8 @@ class ObjectRenderer:
         self.hud_hit_face = self.get_texture('textures/hud/hud_hit.png', (128, 128))
         self.hud_face = self.get_texture('textures/hud/hud.png', (128, 128))
     
+        self.game_over_image = self.get_texture('textures/game_over.png', (WITDH, HEIGHT))
+    
     # Sky Render
         self.sky_image = self.get_texture('textures/sky/sky.png', (WITDH, HALF_HEIGHT))
         self.sky_offset = 0
@@ -51,6 +53,9 @@ class ObjectRenderer:
         for depth, image, pos in list_objects:
             self.screen.blit(image, pos)
 
+    def draw_game_over_image(self):
+        self.game.screen.blit(self.game_over_image, (0, 0))
+        
     @staticmethod
     def get_texture(path, res=(TEXTURE_SIZE, TEXTURE_SIZE)):
         texture = pg.image.load(path).convert_alpha()

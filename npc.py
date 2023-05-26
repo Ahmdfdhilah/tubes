@@ -92,19 +92,19 @@ class NPC(AnimatedSprite):
             if self.pain:
                 self.animate_pain()
 
-            # elif self.ray_cast_value:
-            #     self.player_search_trigger = True
+            elif self.ray_cast_value:
+                self.player_search_trigger = True
 
-            #     if self.dist < self.attack_dist:
-            #         self.animate(self.attack_images)
-            #         self.attack()
-            #     else:
-            #         self.animate(self.walk_images)
-            #         self.movement()
+                if self.dist < self.attack_dist:
+                    self.animate(self.attack_images)
+                    self.attack()
+                else:
+                    self.animate(self.walk_images)
+                    self.movement()
 
-            # elif self.player_search_trigger:
-            #     self.animate(self.walk_images)
-            #     self.movement()
+            elif self.player_search_trigger:
+                self.animate(self.walk_images)
+                self.movement()
         
             else:
                 self.animate(self.idle_images)
