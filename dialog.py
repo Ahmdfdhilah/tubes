@@ -1,103 +1,77 @@
-import pygame as pg
+import pygame 
 from settings import *
-from main import *
 
-pg.init()
+pygame.init()
 
-# WITDH = WITDH
-# HEIGHT = HEIGHT
-# screen = pg.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-# pg.display.set_caption("Dialog Example")
-screen = pg.display.set_mode(RES)
+screen = pygame.display.set_mode(RES)
 
-BLACK = (0, 0, 0)
+# Lebar dan tinggi kotak dialog
+DIALOG_WIDTH = 400
+DIALOG_HEIGHT = 200
+
+# Warna yang digunakan
 WHITE = (255, 255, 255)
-
-character1_image = pg.image.load("textures/dialog/chara1.png")
-character2_image = pg.image.load("textures/dialog/chara2.png")
+BLACK = (0, 0, 0)
 
 
-dialog = {
-        "Character 1": [
-            "Hi there!",
-            "How are you?",
-            "What have you been up to?"
-        ]
-    ,
-        "Character 2":
-        [
-            "Hey!",
-            "I'm good, thanks. How about you?",
-            "Not much, just hanging out."
-        ]
-    ,    "Character 1": [      
-            "What have you been up to?"
-        ]
-    ,
-        "Character 2":
-        [
-            "I'm good, thanks. How about you?",
-            "Not much, just hanging out."
-        ]
-   
-}
+# Menggambar kotak dialog
+def draw_dialog_box(x, y, width, height):
+    pygame.draw.rect(screen, WHITE, (x, y, width, height), 0)
+    pygame.draw.rect(screen, BLACK, (x, y, width, height), 2)
 
-text_animation_duration = 50  
-text_font = pg.font.SysFont("Arial", 24)
-text_color = BLACK
+# Menggambar teks pada kotak dialog
+def draw_text(text, x, y, font_size):
+    text_font = pygame.font.SysFont("Arial", font_size)
+    text_surface = text_font.render(text, True, BLACK)
+    screen.blit(text_surface, (x, y))
 
-current_character = "Character 1"
-current_dialog_index = 0
-current_dialog = dialog[current_character][current_dialog_index]
-current_dialog_position = (WITDH//3.2, HEIGHT//1.3)
-current_dialog_rect = pg.Rect(current_dialog_position, (50, 50))
-is_text_animating = True
-text_animation_timer = 0
-text_index = 0
+# Menggambar gambar karakter
+def draw_character(image, x, y):
+    character = pygame.image.load(image)
+    screen.blit(character, (x, y))
 
-clock = pg.time.Clock()
-Dialog = True
+def show_dialog(text, character_image):
+    bg_img = pygame.image.load('textures\sky\sky.png')
+    screen.blit(pygame.transform.scale(bg_img, (WITDH, HEIGHT)), (0,0))
+    
+    # Menggambar kotak dialog di tengah layar
+    dialog_x = (WITDH - DIALOG_WIDTH) // 2
+    dialog_y = (HEIGHT - DIALOG_HEIGHT) // 2
+    draw_dialog_box(dialog_x, dialog_y, DIALOG_WIDTH, DIALOG_HEIGHT)
 
-while(Dialog == True):
-    # print(pygame.event.get())
-    for event in pg.event.get():
-        if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
-            Dialog = False
-        elif event.type == pg.MOUSEBUTTONUP:
-            current_dialog_index += 1
-            if current_dialog_index >= len(dialog[current_character]):
-                
-                if current_character == "Character 1":
-                    current_character = "Character 2"
+    # Menggambar teks pada kotak dialog
+    text_x = dialog_x + 20
+    text_y = dialog_y + 20
+    draw_text(text, text_x, text_y, 20)
+
+    # Menggambar gambar karakter di sebelah kanan kotak dialog
+    character_x = dialog_x + DIALOG_WIDTH - 120
+    character_y = dialog_y + DIALOG_HEIGHT - 120
+    draw_character(character_image, character_x, character_y)
+
+    pygame.display.flip()
+
+dialog_data = [
+    {"text": "Halo, apa kabar?", "character_image": "textures\chara\chara1.png"},
+    {"text": "Aku adalah karakter pertama.", "character_image": "textures\chara\chara2.png"},
+    {"text": "Salam kenal!", "character_image": "textures\chara\chara1.png"},
+    {"text": "Ini karakter keempat.", "character_image": "textures\chara\chara2.png"},
+    {"text": "Terima kasih sudah bermain!", "character_image": "textures\chara\chara1.png"}
+]
+
+bg_img = pygame.image.load('textures\sky\sky.png')
+
+current_line = 0
+running = True
+
+while running:
+    for event in pygame.event.get(): 
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                if current_line < len(dialog_data)-1:
+                    current_line += 1
                 else:
-                    current_character = "Character 1"
-                current_dialog_index = 0
-            current_dialog = dialog[current_character][current_dialog_index]
-            is_text_animating = True
-            text_index = 0
-    
-    
-    if is_text_animating:
-        if text_index < len(current_dialog):
-            text_animation_timer += clock.get_time()
-            if text_animation_timer > text_animation_duration:
-                text_index += 1
-                text_animation_timer = 0
-        else:
-            is_text_animating = False
-    
-    screen.fill(WHITE)
-    
-    if current_character == "Character 1":
-        screen.blit(character1_image, (50, 50))
-    else:
-        screen.blit(character2_image, (WITDH - 200, 50))
-
-    current_dialog_rect.width = WITDH - 100
-    current_dialog_surface = text_font.render(current_dialog[:text_index], True, text_color)
-    screen.blit(current_dialog_surface, current_dialog_position)
-    pg.draw.rect(screen, BLACK, current_dialog_rect, 2)
-    
-    pg.display.flip()
-    
-    clock.tick(60)
+                    running = False
+    show_dialog(dialog_data[current_line]["text"], dialog_data[current_line]["character_image"]) 

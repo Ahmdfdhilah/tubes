@@ -12,7 +12,7 @@ from sound import *
 from npc import *
 from path_finding import *
 from hud import *
-# from dialog import *
+from dialog import *
 
 class Game:
     def __init__(self):
