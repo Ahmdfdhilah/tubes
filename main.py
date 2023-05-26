@@ -14,9 +14,41 @@ from sound import *
 from npc import *
 from path_finding import *
 from hud import *
-
+from dialog import *
 from button import Button
-
+dialog_data = []
+dialog_data_prologue = [
+    {"text": "Pada Tahun 20XX, Bumi mengalami kekacauan dengan datangnya monster-monster yang ingin mendominasi Bumi", "character_image": "textures\chara\watcher.png"},
+    {"text": "Para monster sudah menyebar terlalu banyak sehingga populasi manusia saat ini hanya berkisar 20%", "character_image": "textures\chara\watcher.png"},
+    {"text": "Masih menjadi misteri darimana monster tersebut tetapi diduga ada beberapa orang mencurigakan terlibat", "character_image": "textures\chara\watcher.png"},
+    {"text": "Manusia yang tersisa bersembunyi di dalam bunker yang dihuni beberapa warga dan ilmuwan", "character_image": "textures\chara\watcher.png"},
+    {"text": "Para ilmuwan sudah menyiapkan beberapa prajurit uji coba yang sudah dibekukan sebelum bencana terjadi", "character_image": "textures\chara\watcher.png"},
+    {"text": "Para prajurit tersebut telah di cairkan untuk melawan monster yang sudah mulai menginvasi bumi", "character_image": "textures\chara\watcher.png"},
+    {"text": "Uhh...dimana ini?", "character_image": "textures\chara\ghulwan.png"},
+    {"text": "Sudah waktunya bangun sersan, dunia sekarang dilanda kekacauan", "character_image": "textures\chara\david.png"},
+    {"text": "Jadi begitu, jelaskan rinciannya!", "character_image": "textures\chara\ghulwan.png"},
+    {"text": "Peneliti menjelaskan keadaan bumi", "character_image": "textures\chara\watcher.png"},
+    {"text": "Bagaimana dengan prajurit lain?", "character_image": "textures\chara\ghulwan.png"},
+    {"text": "Mereka sedang menjalani proses pencairan di tempat lain", "character_image": "textures\chara\david.png"},
+    {"text": "Kumohon sersan, selamatkan ka-", "character_image": "textures\chara\david.png"},
+    {"text": "Tiba-tiba terdengar suara ledakan dan sirine berbunyi diiringi para tentara dan beberapa monster masuk", "character_image": "textures\chara\watcher.png"},
+    {"text": "Jadi mereka orang mencurigakan itu?", "character_image": "textures\chara\ghulwan.png"},
+    {"text": "Benar sersan, ini perlengkapanmu...tolonglah kami!", "character_image": "textures\chara\david.png"},
+    {"text": "Baiklah, ini sudah tugas kami sebagai prajurit", "character_image": "textures\chara\ghulwan.png"}
+]
+dialog_data_epilog = [
+    {"text": "Huft...Apakah sudah selesai?", "character_image": "textures\chara\ghulwan.png"},
+    {"text": "Dimana Andre?", "character_image": "textures\chara\fadil.png"},
+    {"text": "HAHAHA...Akhirnya kudapatkan hal yang dibutuhkan!", "character_image": "textures\chara\andre.png"},
+    {"text": "Dengan ini karya terbaikku akan tercipta...Adios para prajurit!", "character_image": "textures\chara\andre.png"},
+    {"text": "Waduhh...dia kabur", "character_image": "textures\chara\david.png"},
+    {"text": "Setidaknya kita tahu kalau dialah yang menciptakan monster", "character_image": "textures\chara\jatmiko.png"},
+    {"text": "Mau tidak mau kita harus keluar bunker kah...", "character_image": "textures\chara\ihsan.png"},
+    {"text": "Perjalanan kita masih panjang", "character_image": "textures\chara\narator.png"},
+    {"text": "TO BE CONTINUED", "character_image": "textures\chara\narator.png"}
+]
+dialog_data.append(dialog_data_prologue)
+dialog_data.append(dialog_data_epilog)
 class Game:
     def __init__(self):
         pg.init()
@@ -28,7 +60,9 @@ class Game:
         self.global_event = pg.USEREVENT + 0
         pg.time.set_timer(self.global_event, 40)
         self.new_game()
-
+        self.dialog_data = dialog_data
+    def dialog(self):
+        get_dialog(self.dialog_data[0])
     def new_game(self):
         self.map = Map(self)
         self.player = Player(self)
@@ -68,6 +102,7 @@ class Game:
             self.player.reloading(event)
 
     def run(self):
+        self.dialog()
         while True:
             self.check_events()
             self.update()
@@ -162,6 +197,7 @@ class Menu:
                     sys.exit()
                 if event.type == pg.MOUSEBUTTONDOWN:
                     if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
+                        
                         self.play()
                     if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
                         self.options()

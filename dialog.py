@@ -27,7 +27,9 @@ def draw_text(text, x, y, font_size):
 
 # Menggambar gambar karakter
 def draw_character(image, x, y):
+    DEFAULT_IMAGE_SIZE = (100, 100)
     character = pygame.image.load(image)
+    character = pygame.transform.scale(character, DEFAULT_IMAGE_SIZE)
     screen.blit(character, (x, y))
 
 def show_dialog(text, character_image):
@@ -51,27 +53,21 @@ def show_dialog(text, character_image):
 
     pygame.display.flip()
 
-dialog_data = [
-    {"text": "Halo, apa kabar?", "character_image": "textures\chara\chara1.png"},
-    {"text": "Aku adalah karakter pertama.", "character_image": "textures\chara\chara2.png"},
-    {"text": "Salam kenal!", "character_image": "textures\chara\chara1.png"},
-    {"text": "Ini karakter keempat.", "character_image": "textures\chara\chara2.png"},
-    {"text": "Terima kasih sudah bermain!", "character_image": "textures\chara\chara1.png"}
-]
 
 bg_img = pygame.image.load('textures\sky\sky.png')
 
-current_line = 0
-running = True
+def get_dialog(dialog):
+        current_line = 0
+        running = True
 
-while running:
-    for event in pygame.event.get(): 
-        if event.type == pygame.QUIT:
-            running = False
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                if current_line < len(dialog_data)-1:
-                    current_line += 1
-                else:
+        while running:
+            for event in pygame.event.get(): 
+                if event.type == pygame.QUIT:
                     running = False
-    show_dialog(dialog_data[current_line]["text"], dialog_data[current_line]["character_image"]) 
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+                        if current_line < len(dialog)-1:
+                            current_line += 1
+                        else:
+                            running = False
+            show_dialog(dialog[current_line]["text"], dialog[current_line]["character_image"]) 
