@@ -25,27 +25,41 @@ dialog_data_prologue = [
     {"text": "Para ilmuwan sudah menyiapkan beberapa prajurit uji coba yang sudah dibekukan sebelum bencana terjadi", "character_image": "textures\chara\watcher.png"},
     {"text": "Para prajurit tersebut telah di cairkan untuk melawan monster yang sudah mulai menginvasi bumi", "character_image": "textures\chara\watcher.png"},
     {"text": "Uhh...dimana ini?", "character_image": "textures\chara\ghulwan.png"},
-    {"text": "Sudah waktunya bangun sersan, dunia sekarang dilanda kekacauan", "character_image": "textures\chara\david.png"},
-    {"text": "Jadi begitu, jelaskan rinciannya!", "character_image": "textures\chara\ghulwan.png"},
-    {"text": "Peneliti menjelaskan keadaan bumi", "character_image": "textures\chara\watcher.png"},
+    {"text": "Sudah waktunya bangun ghulwan, dunia sekarang dilanda kekacauan", "character_image": "textures\chara\david.png"},
+    {"text": "David!? Jadi begitu, jelaskan rinciannya!", "character_image": "textures\chara\ghulwan.png"},
+    {"text": "David menjelaskan keadaan bumi dan bagaimana dia sudah dibangunkan", "character_image": "textures\chara\watcher.png"},
     {"text": "Bagaimana dengan prajurit lain?", "character_image": "textures\chara\ghulwan.png"},
-    {"text": "Mereka sedang menjalani proses pencairan di tempat lain", "character_image": "textures\chara\david.png"},
-    {"text": "Kumohon sersan, selamatkan ka-", "character_image": "textures\chara\david.png"},
-    {"text": "Tiba-tiba terdengar suara ledakan dan sirine berbunyi diiringi para tentara dan beberapa monster masuk", "character_image": "textures\chara\watcher.png"},
-    {"text": "Jadi mereka orang mencurigakan itu?", "character_image": "textures\chara\ghulwan.png"},
-    {"text": "Benar sersan, ini perlengkapanmu...tolonglah kami!", "character_image": "textures\chara\david.png"},
-    {"text": "Baiklah, ini sudah tugas kami sebagai prajurit", "character_image": "textures\chara\ghulwan.png"}
-]
+    {"text": "Mereka sudah menjalani proses pencairan dan sedang menunggu di luar", "character_image": "textures\chara\david.png"},
+    {"text": "Baiklah ayo kita temui mereka", "character_image": "textures\chara\ghulwan.png"},
+    {"text": "Wah lihat siapa yang baru terbangun", "character_image": "textures\chara\ihsan.png"},
+    {"text": "Sekarang akhirnya kita lengkap", "character_image": "textures\chara\jatmiko.png"},
+    {"text": "Haha sepertinya kalian baik-baik saja ya", "character_image": "textures\chara\ghulwan.png"},
+    {"text": "Waktunya bertugas kah?", "character_image": "textures\chara\david.png"},
+    {"text": "Santai dulu ga sih?", "character_image": "textures\chara\jatmiko.png"},
+    {"text": "Iya, selama kita di bunker pasti akan ama-", "character_image": "textures\chara\ihsan.png"},
+    {"text": "Tiba-tiba terdengar suara ledakan dan sirine berbunyi diiringi para tentara dan beberapa monster menerobos bunker", "character_image": "textures\chara\watcher.png"},
+    {"text": "Hahaha...Akhirnya kutemukan, para tentara serang mereka!", "character_image": "textures\chara\omandre.png"},
+    {"text": "Dia kan Professor Andre, ilmuwan terbaik sebelum kita dibekukan", "character_image": "textures\chara\ihsan.png"},
+    {"text": "Kudengar dia hilang secara misterius", "character_image": "textures\chara\jatmiko.png"},
+    {"text": "Sepertinya kita tahu alasannya, dan harus menghentikannya", "character_image": "textures\chara\ghulwan.png"},
+    {"text": "Waduh tapi kita belum makan sama sekali", "character_image": "textures\chara\ihsan.png"},
+    {"text": "MAKAN TIDAK PERLU, TARUNG NOMOR SATU!!!", "character_image": "textures\chara\david.png"},
+    {"text": "Ayo maju!", "character_image": "textures\chara\ghulwan.png"} 
+    ]
+    
 dialog_data_epilog = [
     {"text": "Huft...Apakah sudah selesai?", "character_image": "textures\chara\ghulwan.png"},
-    {"text": "Dimana Andre?", "character_image": "textures\chara\fadil.png"},
-    {"text": "HAHAHA...Akhirnya kudapatkan hal yang dibutuhkan!", "character_image": "textures\chara\andre.png"},
-    {"text": "Dengan ini karya terbaikku akan tercipta...Adios para prajurit!", "character_image": "textures\chara\andre.png"},
+    {"text": "Dimana Andre?", "character_image": "textures\chara\jatmiko.png"},
+    {"text": "HAHAHA...Akhirnya kudapatkan hal yang dibutuhkan!", "character_image": "textures\chara\omandre.png"},
+    {"text": "Dengan ini karya terbaikku akan tercipta...Adios para prajurit!", "character_image": "textures\chara\omandre.png"},
     {"text": "Waduhh...dia kabur", "character_image": "textures\chara\david.png"},
     {"text": "Setidaknya kita tahu kalau dialah yang menciptakan monster", "character_image": "textures\chara\jatmiko.png"},
     {"text": "Mau tidak mau kita harus keluar bunker kah...", "character_image": "textures\chara\ihsan.png"},
-    {"text": "Perjalanan kita masih panjang", "character_image": "textures\chara\narator.png"},
-    {"text": "TO BE CONTINUED", "character_image": "textures\chara\narator.png"}
+    {"text": "Perjalanan kita masih panjang", "character_image": "textures\chara\ghulwan.png"},
+    {"text": "Para prajurit berhasil mengalahkan musuh-musuh yang menyerang bunker mereka", "character_image": "textures\chara\watcher.png"},
+    {"text": "Tetapi, Prof.Andre berhasil kabur dengan membawa sesuatu untuk niat jahatnya", "character_image": "textures\chara\watcher.png"},
+    {"text": "Para prajurit akan memulai petualangan mereka menghadapi musuh yang lebih berbahaya", "character_image": "textures\chara\watcher.png"},
+    {"text": "TO BE CONTINUED", "character_image": "textures\chara\watcher.png"}
 ]
 dialog_data.append(dialog_data_prologue)
 dialog_data.append(dialog_data_epilog)
@@ -61,8 +75,8 @@ class Game:
         pg.time.set_timer(self.global_event, 40)
         self.new_game()
         self.dialog_data = dialog_data
-    def dialog(self):
-        get_dialog(self.dialog_data[0])
+    def dialog(self,index):
+        get_dialog(self.dialog_data[index])
     def new_game(self):
         self.map = Map(self)
         self.player = Player(self)
@@ -102,7 +116,7 @@ class Game:
             self.player.reloading(event)
 
     def run(self):
-        self.dialog()
+        self.dialog(0)
         while True:
             self.check_events()
             self.update()
