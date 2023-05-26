@@ -17,16 +17,15 @@ class ObjectsHandler:
         # add_sprite(SpriteObj(game))
         add_sprite(AnimatedSprite(game))
         add_sprite(AnimatedSprite(game, pos=(7, 2)))
-        add_sprite(AnimatedSprite(game, pos=(2, 4)))
+        # add_sprite(AnimatedSprite(game, pos=(2, 4)))
         add_sprite(AnimatedSprite(game, pos=(10.5, 7.5)))
 
         # NPC map
-        add_npc(NPC(game))
-        add_npc(NPC(game, pos=(4.5, 25.5)))
-        add_npc(NPC(game, pos=(23, 28)))
-        add_npc(NPC(game, pos=(21, 2)))
-        add_npc(NPC(game, pos=(3, 2)))
-        add_npc(NPC(game, pos=(18, 12)))
+        add_npc(Flame(game, pos=(2, 6)))
+        add_npc(Mino(game, pos=(4, 6)))
+        add_npc(Pig(game, pos=(2, 7)))
+        add_npc(NPC(game, pos=(2, 4)))
+        add_npc(Tentara(game, pos=(3, 8)))
         
         # add_npc(NPC(game))
         # add_npc(NPC(game))
