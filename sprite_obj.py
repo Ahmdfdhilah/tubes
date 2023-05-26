@@ -85,3 +85,77 @@ class AnimatedSprite(SpriteObj):
                 img = pg.image.load(path + '/' + file_name).convert_alpha()
                 images.append(img)
         return images
+
+class Buku(SpriteObj):
+    def __init__(self, game, path = 'sprite/Static/buku.png', 
+                 pos=(2, 7), scale=.55, shift=.55):
+        super().__init__(game, path, pos, scale, shift)
+        self.image = pg.image.load(path).convert_alpha()
+        self.IMAGE_WIDTH = self.image.get_width()
+        self.IMAGE_HALF_WIDTH = self.image.get_width() // 2
+        
+class Pillar(SpriteObj):
+    def __init__(self, game, path = 'sprite/Static/pillar.png', 
+                 pos=(2, 7), scale=1., shift=0):
+        super().__init__(game, path, pos, scale, shift)
+        self.image = pg.image.load(path).convert_alpha()
+        self.IMAGE_WIDTH = self.image.get_width()
+        self.IMAGE_HALF_WIDTH = self.image.get_width() // 2
+        
+class PantungUtuh(SpriteObj):
+    def __init__(self, game, path = 'sprite/Static/patungutuh.png', 
+                 pos=(2, 7), scale=.85, shift=.15):
+        super().__init__(game, path, pos, scale, shift)
+        self.image = pg.image.load(path).convert_alpha()
+        self.IMAGE_WIDTH = self.image.get_width()
+        self.IMAGE_HALF_WIDTH = self.image.get_width() // 2
+        
+class ApiMerah(AnimatedSprite):
+    def __init__(self, game, path='sprite/Animated/Api_Merah/0.png', 
+                 pos=(10, 5), scale=0.85, shift=0.35, animation_time=120):
+        super().__init__(game, path, pos, scale, shift)
+        self.animation_time = animation_time
+        self.path = path.rsplit('/', 1)[0]
+        self.images = self.get_images(self.path)
+        self.animation_time_prev = pg.time.get_ticks()
+        self.animation_trigger = False
+
+class ApiBiru(AnimatedSprite):
+    def __init__(self, game, path='sprite/Animated/Api_Biru/0.png', 
+                 pos=(10, 5), scale=0.85, shift=0.35, animation_time=120):
+        super().__init__(game, path, pos, scale, shift)
+        self.animation_time = animation_time
+        self.path = path.rsplit('/', 1)[0]
+        self.images = self.get_images(self.path)
+        self.animation_time_prev = pg.time.get_ticks()
+        self.animation_trigger = False
+
+class ApiKuning(AnimatedSprite):
+    def __init__(self, game, path='sprite/Animated/Api_Kuning/0.png', 
+                 pos=(10, 5), scale=0.85, shift=0.35, animation_time=120):
+        super().__init__(game, path, pos, scale, shift)
+        self.animation_time = animation_time
+        self.path = path.rsplit('/', 1)[0]
+        self.images = self.get_images(self.path)
+        self.animation_time_prev = pg.time.get_ticks()
+        self.animation_trigger = False
+
+class Candle(AnimatedSprite):
+    def __init__(self, game, path='sprite/Animated/candle/0.png', 
+                 pos=(10, 5), scale=0.55, shift=0.55, animation_time=120):
+        super().__init__(game, path, pos, scale, shift)
+        self.animation_time = animation_time
+        self.path = path.rsplit('/', 1)[0]
+        self.images = self.get_images(self.path)
+        self.animation_time_prev = pg.time.get_ticks()
+        self.animation_trigger = False
+
+class Sphere(AnimatedSprite):
+    def __init__(self, game, path='sprite/Animated/sphere/0.png', 
+                 pos=(10, 5), scale=0.85, shift=0.15, animation_time=120):
+        super().__init__(game, path, pos, scale, shift)
+        self.animation_time = animation_time
+        self.path = path.rsplit('/', 1)[0]
+        self.images = self.get_images(self.path)
+        self.animation_time_prev = pg.time.get_ticks()
+        self.animation_trigger = False

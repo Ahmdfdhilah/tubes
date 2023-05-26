@@ -7,10 +7,14 @@ class ObjectRenderer:
         self.screen = game.screen
         self.wall_textures = self.load_wall_textures()
     
-        self.digit_size = 90
+        self.digit_size = 50
         self.digit_img = [self.get_texture(f'textures/digit/{i}.png', [self.digit_size] * 2)
                         for i in range(11)]
         self.digit = dict(zip(map(str, range(11)), self.digit_img))
+
+        self.hud_face = self.get_texture('textures/hud/hud.png', (128, 128))
+        self.hud_hit_face = self.get_texture('textures/hud/hud_hit.png', (128, 128))
+        self.hud_face = self.get_texture('textures/hud/hud.png', (128, 128))
     
     # Sky Render
         self.sky_image = self.get_texture('textures/sky/sky.png', (WITDH, HALF_HEIGHT))
@@ -19,13 +23,18 @@ class ObjectRenderer:
     def draw(self):
         self.draw_background()
         self.render_game_object()
-        self.draw_health()
+        self.draw_hud()
 
-    def draw_health(self):
+    def draw_hud(self):
+        self.screen.blit(self.hud_face, (HALF_WITDH + 625, 125))
+
+        bullet = str(self.game.weapon.bullet)
+        for i, char in enumerate (bullet):
+            self.screen.blit(self.digit[char], ((225 + i * self.digit_size), 175))
         health = str(self.game.player.hp)
         for i, char in enumerate (health):
-            self.screen.blit(self.digit[char], (i * self.digit_size, 0))
-        self.screen.blit(self.digit['10'], ((i + 1) * self.digit_size, 0))
+            self.screen.blit(self.digit[char], ((225 + i * self.digit_size), 125))
+        # self.screen.blit(self.digit['10'], ((225 + (i + 1) * self.digit_size), 125))
 
     # Draw Background (sky and floor) Method
     def draw_background(self):
@@ -72,7 +81,7 @@ class ObjectRenderer:
             21: self.get_texture("textures/walls/21.png"),
             22: self.get_texture("textures/walls/22.png"),
             23: self.get_texture("textures/walls/23.png"),
-            #24: self.get_texture("textures/walls/24.png"),
+            24: self.get_texture("textures/walls/24.png"),
             25: self.get_texture("textures/walls/25.png"),
             26: self.get_texture("textures/walls/26.png"),
             27: self.get_texture("textures/walls/27.png"),

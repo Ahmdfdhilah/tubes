@@ -15,17 +15,34 @@ class ObjectsHandler:
 
         # Sprite Map
         # add_sprite(SpriteObj(game))
-        add_sprite(AnimatedSprite(game))
-        add_sprite(AnimatedSprite(game, pos=(7, 2)))
-        # add_sprite(AnimatedSprite(game, pos=(2, 4)))
-        add_sprite(AnimatedSprite(game, pos=(10.5, 7.5)))
+        # add_sprite(ApiMerah(game))
+        # add_sprite(ApiMerah(game, pos=(7, 2)))
+        add_sprite(PantungUtuh(game, pos=(1.5, 3.5)))
+        add_sprite(PantungUtuh(game, pos=(1.5, 6.5)))
+        add_sprite(ApiBiru(game, pos=(1.5, 2.5)))
+        add_sprite(ApiKuning(game, pos=(1.5, 7.5)))
+        add_sprite(Pillar(game, pos=(27, 4)))
+        add_sprite(Pillar(game, pos=(28, 4)))
+        add_sprite(Pillar(game, pos=(27, 6)))
+        add_sprite(Pillar(game, pos=(28, 6)))
+        add_sprite(Buku(game, pos=(27.5, 6)))
+        add_sprite(PantungUtuh(game, pos=(28, 17.5)))
+        add_sprite(PantungUtuh(game, pos=(25, 17.5)))
+        add_sprite(Sphere(game, pos=(27.5, 5)))
+        add_sprite(Candle(game, pos=(27, 5)))
+        add_sprite(Candle(game, pos=(27.5, 4)))
+        add_sprite(Candle(game, pos=(28, 5)))
+        
+
+        # add_sprite(ApiMerah(game, pos=(10.5, 7.5)))
 
         # NPC map
-        add_npc(Flame(game, pos=(2, 6)))
-        add_npc(Mino(game, pos=(4, 6)))
-        add_npc(Pig(game, pos=(2, 7)))
-        add_npc(NPC(game, pos=(2, 4)))
-        add_npc(Tentara(game, pos=(3, 8)))
+        add_npc(NPC(game))
+        add_npc(NPC(game, pos=(4.5, 25.5)))
+        add_npc(NPC(game, pos=(23, 28)))
+        add_npc(NPC(game, pos=(21, 2)))
+        add_npc(NPC(game, pos=(3, 2)))
+        add_npc(NPC(game, pos=(18, 12)))
         
         # add_npc(NPC(game))
         # add_npc(NPC(game))
