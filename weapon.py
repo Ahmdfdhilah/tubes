@@ -1,7 +1,7 @@
 from sprite_obj import *
 
 class weapon(AnimatedSprite):
-    def __init__(self, game, path='sprite/weapon/colt/1.png', scale=.2, animation_time=80):
+    def __init__(self, game, path='sprite/weapon/wennie/1.png', scale=.3, animation_time=80):
         super().__init__(game=game, path=path, scale=scale, animation_time=animation_time)
         # self.shoot_images = self.get_images(self.path + '/shoot')
         # self.reload_images = self.get_images(self.path + '/reload')
@@ -14,8 +14,8 @@ class weapon(AnimatedSprite):
         self.reloading = False
         self.num_images = len(self.images)
         self.frame_counter = 0
-        self.damage = 12
-        self.max_bullet = 6
+        self.damage = 40
+        self.max_bullet = 10
         self.bullet_empty = False
         self.bullet = self.max_bullet
 

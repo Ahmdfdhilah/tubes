@@ -106,8 +106,8 @@ class NPC(AnimatedSprite):
             #     self.animate(self.walk_images)
             #     self.movement()
         
-            else:
-                self.animate(self.idle_images)
+            # else:
+            #     self.animate(self.idle_images)
         else:
             self.animate_death()
 

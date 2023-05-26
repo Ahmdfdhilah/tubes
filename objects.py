@@ -24,16 +24,17 @@ class ObjectsHandler:
         add_npc(NPC(game))
         add_npc(NPC(game, pos=(4.5, 25.5)))
         add_npc(NPC(game, pos=(23, 28)))
-        # add_npc(NPC(game))
-        # add_npc(NPC(game))
-        # add_npc(NPC(game))
+        add_npc(NPC(game, pos=(21, 2)))
+        add_npc(NPC(game, pos=(3, 2)))
+        add_npc(NPC(game, pos=(18, 12)))
+        
         # add_npc(NPC(game))
         # add_npc(NPC(game))
         # add_npc(NPC(game))
         # add_npc(NPC(game))
         # add_npc(NPC(game))
 
-        # add_npc(NPC(game, pos = (6.5, 3.5)))
+        
 
 
     def update(self):

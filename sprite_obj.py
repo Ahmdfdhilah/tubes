@@ -3,7 +3,7 @@ from settings import *
 import os
 from collections import deque
 
-class SpriteObj:
+class SpriteObj(pg.sprite.Sprite):
     def __init__(self, game, path = 'sprite/Static/chest.png', 
                  pos=(2, 7), scale=.45, shift=.65):
         self.game = game

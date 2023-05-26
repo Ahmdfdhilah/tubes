@@ -12,6 +12,7 @@ from sound import *
 from npc import *
 from path_finding import *
 from hud import *
+# from dialog import *
 
 class Game:
     def __init__(self):
@@ -65,10 +66,11 @@ class Game:
 
     def run(self):
         while True:
+            # pg.game.dialog.run()
             self.check_events()
             self.update()
             self.draw()
 
 if __name__ == '__main__':
     game = Game()
-    game.run()        
+    game.run()
