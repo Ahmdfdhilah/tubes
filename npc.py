@@ -106,8 +106,8 @@ class NPC(AnimatedSprite):
             #     self.animate(self.walk_images)
             #     self.movement()
         
-            # else:
-            #     self.animate(self.idle_images)
+            else:
+                self.animate(self.idle_images)
         else:
             self.animate_death()
 
@@ -185,3 +185,96 @@ class NPC(AnimatedSprite):
         if self.ray_cast_player_npc():
             pg.draw.line(self.game.screen, 'orange', (100 * self.game.player.x, 100 * self.game.player.y),
                          (100 * self.x, 100 * self.y), 2)
+            
+
+
+
+
+class Tentara(NPC):
+    def __init__(self, game, path='sprite/NPC/TENTARA/0.png',
+                 pos=(5.5, 5.5), scale=.6, shift=.38, animation_time=180):
+        super().__init__(game, path, pos, scale, shift, animation_time)
+        self.attack_images = self.get_images(self.path + '/shot')
+        self.death_images = self.get_images(self.path + '/dead')
+        self.idle_images = self.get_images(self.path + '/idle')
+        self.pain_images = self.get_images(self.path + '/pain')
+        self.walk_images = self.get_images(self.path + '/walk')
+        
+        self.attack_dist = randint(2, 3)
+        self.speed = .03
+        self.size = 10
+        self.hp = 100
+        self.damage = 10
+        self.accu = .15
+        self.alive = True
+        self.pain = False
+        self.ray_cast_value = False
+        self.frame_counter = 0
+        self.player_search_trigger = False
+        
+class Flame(NPC):
+    def __init__(self, game, path='sprite/NPC/TENTARA/0.png',
+                 pos=(5.5, 5.5), scale=.5, shift=.48, animation_time=180):
+        super().__init__(game, path, pos, scale, shift, animation_time)
+        self.attack_images = self.get_images(self.path + '/shot')
+        self.death_images = self.get_images(self.path + '/dead')
+        self.idle_images = self.get_images(self.path + '/idle')
+        self.pain_images = self.get_images(self.path + '/pain')
+        self.walk_images = self.get_images(self.path + '/walk')
+        
+        self.attack_dist = randint(2, 3)
+        self.speed = .05
+        self.size = 10
+        self.hp = 80
+        self.damage = 18
+        self.accu = .15
+        self.alive = True
+        self.pain = False
+        self.ray_cast_value = False
+        self.frame_counter = 0
+        self.player_search_trigger = False
+        
+class Mino(NPC):
+    def __init__(self, game, path='sprite/NPC/mino/0.png',
+                 pos=(5.5, 5.5), scale=.8, shift=.2, animation_time=180):
+        super().__init__(game, path, pos, scale, shift, animation_time)
+        self.attack_images = self.get_images(self.path + '/shot')
+        self.death_images = self.get_images(self.path + '/dead')
+        self.idle_images = self.get_images(self.path + '/idle')
+        self.pain_images = self.get_images(self.path + '/pain')
+        self.walk_images = self.get_images(self.path + '/walk')
+        
+        self.attack_dist = randint(2, 3)
+        self.speed = .03
+        self.size = 10
+        self.hp = 195
+        self.damage = 112
+        self.accu = .16
+        self.alive = True
+        self.pain = False
+        self.ray_cast_value = False
+        self.frame_counter = 0
+        self.player_search_trigger = False
+        
+        
+class Pig(NPC):
+    def __init__(self, game, path='sprite/NPC/PIG/0.png',
+                 pos=(5.5, 5.5), scale=.9, shift=.18, animation_time=180):
+        super().__init__(game, path, pos, scale, shift, animation_time)
+        self.attack_images = self.get_images(self.path + '/shot')
+        self.death_images = self.get_images(self.path + '/dead')
+        self.idle_images = self.get_images(self.path + '/idle')
+        self.pain_images = self.get_images(self.path + '/pain')
+        self.walk_images = self.get_images(self.path + '/walk')
+        
+        self.attack_dist = randint(2, 3)
+        self.speed = .03
+        self.size = 10
+        self.hp = 250
+        self.damage = 15
+        self.accu = .17
+        self.alive = True
+        self.pain = False
+        self.ray_cast_value = False
+        self.frame_counter = 0
+        self.player_search_trigger = False
