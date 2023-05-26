@@ -1,5 +1,6 @@
 import pygame as pg
 import sys
+from subprocess import Popen
 from settings import *
 from map import *
 from player import *
@@ -66,11 +67,10 @@ class Game:
 
     def run(self):
         while True:
-            # pg.game.dialog.run()
             self.check_events()
             self.update()
             self.draw()
 
-if __name__ == '__main__':
+if __name__ == '__main__':    
     game = Game()
     game.run()
