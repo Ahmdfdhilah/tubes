@@ -15,16 +15,19 @@ Karakter utama dalam game dapat dijalankan menggunakan keyboard (WASD), mengguna
 # Dependensi paket (library) yang dibutuhkan untuk menjalankan aplikasi :
 
 Pygame
+System
+Textwarp
+Math
 
 ## UML Class Diagram
 
 # Kontributor
 
-| Nama                     | NIM       |
-| ------------------------ | --------- |
-| Ghulwan Shihabuddin      | 121140164 |
-| Ihsan Triyadi            | 121140163 |
-| Andreas Sihotang         | 121140168 |
-| Ahmad Fadillah           | 121140173 |
-| M Daffa Fahreza          | 121140178 |
-| Daffa Abdurohman Jatmiko | 121140181 |
+| Nama                           | NIM       | Kontribusi                             |
+| ------------------------       | --------- | ------------------                     |
+| Ghulwan Shihabuddin (lead)     | 121140164 | Story + Asset Game                     |
+| Ihsan Triyadi                  | 121140163 | Map + Asset Game                       |
+| Andreas Sihotang               | 121140168 | Main Programmer                        |
+| Ahmad Fadillah                 | 121140173 | Project Manager + Secondary Programmer |     
+| M Daffa Fahreza                | 121140178 | Enemmy + Asset Game + PPT              |
+| Daffa Abdurohman Jatmiko       | 121140181 | Secondary Programmer + UML             |          
