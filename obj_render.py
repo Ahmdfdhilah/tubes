@@ -15,7 +15,6 @@ class ObjectRenderer:
         self.hud_face = self.get_texture('textures/hud/hud.png', (128, 128))
         self.hud_hit_face = self.get_texture('textures/hud/hud_hit.png', (128, 128))
         self.hud_face = self.get_texture('textures/hud/hud.png', (128, 128))
-    
         self.game_over_image = self.get_texture('textures/game_over.png', (WITDH, HEIGHT))
     
     # Sky Render

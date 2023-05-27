@@ -1,4 +1,5 @@
 import pygame as pg
+import time
 import sys
 import textwrap
 from subprocess import Popen
@@ -58,6 +59,11 @@ class Game:
     def update(self):
         if self.loss:
             self.object_renderer.draw_game_over_image()
+            pg.mixer.Sound.stop(self.background_music)
+            pg.mouse.set_visible(True)
+            pg.display.flip()
+            time.sleep(3)
+            menu.main_menu()
         elif self.win:
             self.dialog(1)
             pg.mixer.Sound.stop(self.background_music)
@@ -73,11 +79,8 @@ class Game:
         pg.display.set_caption(f"{self.clock.get_fps() :.1f}")
 
     def draw(self):
-        # self.screen.fill('black')
         self.object_renderer.draw()
         self.weapon.draw()
-        # self.map.draw()
-        # self.player.draw()
 
     def check_events(self):
         self.global_trigger = False
@@ -95,7 +98,7 @@ class Game:
             self.player.reloading(event)
 
     def run(self):
-        self.dialog(0)
+        #self.dialog(0)
         while True:
             self.check_events()
             self.update()
