@@ -147,7 +147,7 @@ class Menu:
                 self.SCREEN.blit(line_text, line_rect)
 
             OPTIONS_BACK = Button(image=None, pos=(HALF_WITDH, 800),
-                                text_input="BACK", font=self.font, base_color="black", hovering_color="green")
+                                text_input="BACK", font=self.font, base_color="black", hovering_color="white")
 
             OPTIONS_BACK.change_color(OPTIONS_MOUSE_POS)
             OPTIONS_BACK.update(self.SCREEN)
