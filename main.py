@@ -98,7 +98,7 @@ class Game:
             self.player.reloading(event)
 
     def run(self):
-        #self.dialog(0)
+        self.dialog(0)
         while True:
             self.check_events()
             self.update()
