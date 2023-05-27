@@ -109,21 +109,22 @@ class Menu:
         pg.display.set_caption("Menu")
         self.BG = pg.image.load("assets/bg8.jpg")
         self.font = pg.font.Font("assets/font.ttf", 45)
-    def play(self):
-        game = Game()
-        game.run()
 
+    def play(self): 
+        game = Game()
+        game.run()  
+    
     def options(self):
         while True:
             OPTIONS_MOUSE_POS = pg.mouse.get_pos()
 
-            self.SCREEN.blit(self.BG, (0, 0))
+            self.SCREEN.blit(self.BG, (0, 0)) 
 
             # Long string
             text = "Game ini berlatar di sebuah bunker dimana bumi mengalami kehancuran dikarenakan munculnya monster yang diciptakan untuk mendominasi bumi"
 
             # Calculate the maximum width and height based on the resolution
-            max_width = 0.6 * self.SCREEN.get_width()  # 80% of the screen width
+            max_width = 0.6 * self.SCREEN.get_width()  # 60% of the screen width
             max_height = 0.8 * self.SCREEN.get_height()  # 80% of the screen height
 
             # Split the long string into multiple lines to fit within the maximum width and height
@@ -131,36 +132,21 @@ class Menu:
 
             # Render each line of the text
             for i, line in enumerate(lines):
-                line_text = self.font.render(line, True, "Black")
+                line_text = self.font.render(line, True, "black")
 
                 # Adjust font size if the text exceeds the maximum width or height
                 if line_text.get_width() > max_width:
-                    line_text = pg.transform.scale(
-                        line_text, (int(max_width), line_text.get_height())
-                    )
+                    line_text = pg.transform.scale(line_text, (int(max_width), line_text.get_height()))
                 if line_text.get_height() > max_height:
-                    line_text = pg.transform.scale(
-                        line_text, (line_text.get_width(), int(max_height))
-                    )
+                    line_text = pg.transform.scale(line_text, (line_text.get_width(), int(max_height)))
 
-                line_rect = line_text.get_rect(
-                    center=(
-                        self.SCREEN.get_width() // 2,
-                        self.SCREEN.get_height() // 2 + i * 50,
-                    )
-                )
+                line_rect = line_text.get_rect(center=(self.SCREEN.get_width() // 2, self.SCREEN.get_height() // 2 + i * 50))
                 self.SCREEN.blit(line_text, line_rect)
 
-            OPTIONS_BACK = Button(
-                image=None,
-                pos=(HALF_WITDH, 800),
-                text_input="BACK",
-                font=self.font,
-                base_color="Black",
-                hovering_color="Green",
-            )
+            OPTIONS_BACK = Button(image=None, pos=(HALF_WITDH, 800),
+                                text_input="BACK", font=self.font, base_color="black", hovering_color="green")
 
-            OPTIONS_BACK.changeColor(OPTIONS_MOUSE_POS)
+            OPTIONS_BACK.change_color(OPTIONS_MOUSE_POS)
             OPTIONS_BACK.update(self.SCREEN)
 
             for event in pg.event.get():
@@ -168,11 +154,11 @@ class Menu:
                     pg.quit()
                     sys.exit()
                 if event.type == pg.MOUSEBUTTONDOWN:
-                    if OPTIONS_BACK.checkForInput(OPTIONS_MOUSE_POS):
+                    if OPTIONS_BACK.check_for_input(OPTIONS_MOUSE_POS):
                         self.main_menu()
 
             pg.display.update()
-
+       
     def main_menu(self):
         while True:
             self.SCREEN.blit(self.BG, (0, 0))
@@ -182,53 +168,165 @@ class Menu:
             MENU_TEXT = self.font.render("Apocalypse Dominator", True, "#000000")
             MENU_RECT = MENU_TEXT.get_rect(center=(HALF_WITDH, 250))
 
-            PLAY_BUTTON = Button(
-                image=pg.image.load("assets/Play Rect.png"),
-                pos=(HALF_WITDH, 510),
-                text_input="PLAY",
-                font=self.font,
-                base_color="#000000",
-                hovering_color="White",
-            )
-            OPTIONS_BUTTON = Button(
-                image=pg.image.load("assets/Options Rect.png"),
-                pos=(HALF_WITDH, 660),
-                text_input="ABOUT",
-                font=self.font,
-                base_color="#000000",
-                hovering_color="White",
-            )
-            QUIT_BUTTON = Button(
-                image=pg.image.load("assets/Quit Rect.png"),
-                pos=(HALF_WITDH, 810),
-                text_input="QUIT",
-                font=self.font,
-                base_color="#000000",
-                hovering_color="White",
-            )
+            PLAY_BUTTON = Button(image=pg.image.load("assets/Play Rect.png"), pos=(HALF_WITDH, 510), 
+                                text_input="PLAY", font=self.font, base_color="#000000", hovering_color="white")
+            OPTIONS_BUTTON = Button(image=pg.image.load("assets/Options Rect.png"), pos=(HALF_WITDH, 660), 
+                                text_input="ABOUT", font=self.font, base_color="#000000", hovering_color="white")
+            QUIT_BUTTON = Button(image=pg.image.load("assets/Quit Rect.png"), pos=(HALF_WITDH, 810), 
+                                text_input="QUIT", font=self.font, base_color="#000000", hovering_color="white")
 
             self.SCREEN.blit(MENU_TEXT, MENU_RECT)
 
             for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
-                button.changeColor(MENU_MOUSE_POS)
+                button.change_color(MENU_MOUSE_POS)
                 button.update(self.SCREEN)
-
+            
             for event in pg.event.get():
                 if event.type == pg.QUIT:
                     pg.quit()
                     sys.exit()
                 if event.type == pg.MOUSEBUTTONDOWN:
-                    if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    if PLAY_BUTTON.check_for_input(MENU_MOUSE_POS):
                         self.play()
-                    if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    if OPTIONS_BUTTON.check_for_input(MENU_MOUSE_POS):
                         self.options()
-                    if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    if QUIT_BUTTON.check_for_input(MENU_MOUSE_POS):
                         pg.quit()
                         sys.exit()
 
             pg.display.update()
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     menu = Menu()
     menu.main_menu()
+
+# class Menu:
+#     def __init__(self):
+#         pg.init()
+#         self.SCREEN = pg.display.set_mode(RES)
+#         pg.display.set_caption("Menu")
+#         self.BG = pg.image.load("assets/bg8.jpg")
+#         self.font = pg.font.Font("assets/font.ttf", 45)
+#     def play(self):
+#         game = Game()
+#         game.run()
+
+#     def options(self):
+#         while True:
+#             OPTIONS_MOUSE_POS = pg.mouse.get_pos()
+
+#             self.SCREEN.blit(self.BG, (0, 0))
+
+#             # Long string
+#             text = "Game ini berlatar di sebuah bunker dimana bumi mengalami kehancuran dikarenakan munculnya monster yang diciptakan untuk mendominasi bumi"
+
+#             # Calculate the maximum width and height based on the resolution
+#             max_width = 0.6 * self.SCREEN.get_width()  # 80% of the screen width
+#             max_height = 0.8 * self.SCREEN.get_height()  # 80% of the screen height
+
+#             # Split the long string into multiple lines to fit within the maximum width and height
+#             lines = textwrap.wrap(text, width=50)
+
+#             # Render each line of the text
+#             for i, line in enumerate(lines):
+#                 line_text = self.font.render(line, True, "Black")
+
+#                 # Adjust font size if the text exceeds the maximum width or height
+#                 if line_text.get_width() > max_width:
+#                     line_text = pg.transform.scale(
+#                         line_text, (int(max_width), line_text.get_height())
+#                     )
+#                 if line_text.get_height() > max_height:
+#                     line_text = pg.transform.scale(
+#                         line_text, (line_text.get_width(), int(max_height))
+#                     )
+
+#                 line_rect = line_text.get_rect(
+#                     center=(
+#                         self.SCREEN.get_width() // 2,
+#                         self.SCREEN.get_height() // 2 + i * 50,
+#                     )
+#                 )
+#                 self.SCREEN.blit(line_text, line_rect)
+
+#             OPTIONS_BACK = Button(
+#                 image=None,
+#                 pos=(HALF_WITDH, 800),
+#                 text_input="BACK",
+#                 font=self.font,
+#                 base_color="Black",
+#                 hovering_color="Green",
+#             )
+
+#             OPTIONS_BACK.changeColor(OPTIONS_MOUSE_POS)
+#             OPTIONS_BACK.update(self.SCREEN)
+
+#             for event in pg.event.get():
+#                 if event.type == pg.QUIT:
+#                     pg.quit()
+#                     sys.exit()
+#                 if event.type == pg.MOUSEBUTTONDOWN:
+#                     if OPTIONS_BACK.checkForInput(OPTIONS_MOUSE_POS):
+#                         self.main_menu()
+
+#             pg.display.update()
+
+#     def main_menu(self):
+#         while True:
+#             self.SCREEN.blit(self.BG, (0, 0))
+
+#             MENU_MOUSE_POS = pg.mouse.get_pos()
+
+#             MENU_TEXT = self.font.render("Apocalypse Dominator", True, "#000000")
+#             MENU_RECT = MENU_TEXT.get_rect(center=(HALF_WITDH, 250))
+
+#             PLAY_BUTTON = Button(
+#                 image=pg.image.load("assets/Play Rect.png"),
+#                 pos=(HALF_WITDH, 510),
+#                 text_input="PLAY",
+#                 font=self.font,
+#                 base_color="#000000",
+#                 hovering_color="White",
+#             )
+#             OPTIONS_BUTTON = Button(
+#                 image=pg.image.load("assets/Options Rect.png"),
+#                 pos=(HALF_WITDH, 660),
+#                 text_input="ABOUT",
+#                 font=self.font,
+#                 base_color="#000000",
+#                 hovering_color="White",
+#             )
+#             QUIT_BUTTON = Button(
+#                 image=pg.image.load("assets/Quit Rect.png"),
+#                 pos=(HALF_WITDH, 810),
+#                 text_input="QUIT",
+#                 font=self.font,
+#                 base_color="#000000",
+#                 hovering_color="White",
+#             )
+
+#             self.SCREEN.blit(MENU_TEXT, MENU_RECT)
+
+#             for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
+#                 button.changeColor(MENU_MOUSE_POS)
+#                 button.update(self.SCREEN)
+
+#             for event in pg.event.get():
+#                 if event.type == pg.QUIT:
+#                     pg.quit()
+#                     sys.exit()
+#                 if event.type == pg.MOUSEBUTTONDOWN:
+#                     if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
+#                         self.play()
+#                     if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
+#                         self.options()
+#                     if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
+#                         pg.quit()
+#                         sys.exit()
+
+#             pg.display.update()
+
+
+# if __name__ == "__main__":
+#     menu = Menu()
+#     menu.main_menu()
