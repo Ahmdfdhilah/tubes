@@ -4,19 +4,20 @@ Apocalypse Dominator
 
 # Deskripsi Game
 
-Apocalypse Dominator adalah sebuah game first-person shooter yang mengambil inspirasi dari DOOM 3D. Game ini dibuat menggunakan bahasa pemrograman Python dan library Pygame. Dalam game ini, pemain akan memerankan karakter Fadil, seorang prajurit uji coba yang berhasil dihidupkan kembali setelah ratusan tahun dibekukan. Fadil dan timnya diberi misi untuk mencari tahu penyebab terjadinya munculnya makhluk ganas yang telah menghancurkan hampir 80% kehidupan di bumi.
-
-Dalam perjalanan misinya, Tokoh utama harus berhadapan dengan berbagai macam makhluk ganas yang bisa mengubah manusia menjadi satu di antara mereka. Untuk menghadapinya, Tokoh utama akan dilengkapi dengan kekuatan super yang akan diuji coba melalui pertarungan melawan salah satu makhluk. Pemain akan memainkan game ini dengan berbagai fitur seperti Map Class, Player Class, Render Class, dan Game Class. Dengan konsep PBO, game ini menggunakan inheritance, abstraction, polymorphism, dan encapsulation untuk membuat gameplay yang menarik dan seru.
+Apocalypse Dominator adalah sebuah game first-person. Game ini dibuat menggunakan bahasa pemrograman Python dan library Pygame. Dalam game ini, pemain akan memerankan karakter Ghulwan, seorang prajurit uji coba yang berhasil dihidupkan kembali setelah ratusan tahun dibekukan. Ghulwan dan timnya diberi misi untuk mencari tahu penyebab terjadinya munculnya makhluk ganas yang telah menghancurkan hampir 80% kehidupan di bumi. Dalam perjalanan misinya, Tokoh utama harus berhadapan dengan berbagai macam makhluk ganas yang bisa mengubah manusia menjadi satu di antara mereka. Untuk menghadapinya, Tokoh utama akan dilengkapi dengan senjata yang digunakan untuk melalui pertarungan melawan beberapa makhluk yang telah diciptakan. Kami telah menerapkan beberapa konsep PBO pada game ini yaitu inheritance, abstraction, polymorphism, dan encapsulation untuk membuat gameplay yang menarik dan seru.
 
 # Cara Menjalankan Game
 
-Karakter utama dalam game dapat dijalankan menggunakan keyboard (WASD), menggunakan mouse untuk berganti arah dan menggunakan Mouse Left Button (MLB) untuk menembak
+# Cara Bermain
+
+Kami menggunakan kontrol mouse dan keyboard sebagai penggerak sebagaimana umumnya game yang ada. Dengan menggunakan W untuk maju, A untuk bergerak ke arah kiri, S untuk bergerak mundur, D untuk bergerak kearah kanan, dan R untuk reload. Kami juga menggunakan mouse untuk interaksi antara karakter yang kami buat dengan user agar karakter bisa melihat 360°. Kami juga menggunakan tombol kanan untuk menembak. Untuk menyelesaikan game ini pemain diharuskan untuk mengalahkan seluruh musuh yang ada serta mengalahkan bos terakhir. Player juga bisa menambah HP dengan mengambil item yang heal yang telah disediakan.
 
 # Dependensi paket (library) yang dibutuhkan untuk menjalankan aplikasi :
 
 Pygame
 System
 Textwarp
+Time
 Math
 
 ## UML Class Diagram
