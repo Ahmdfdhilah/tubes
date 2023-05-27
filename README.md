@@ -21,13 +21,15 @@ Math
 
 ## UML Class Diagram
 
+![Contoh Gambar](DiagramUML.jpeg)
+
 # Kontributor
 
-| Nama                           | NIM       | Kontribusi                             |
-| ------------------------       | --------- | ------------------                     |
-| Ghulwan Shihabuddin (lead)     | 121140164 | Story + Asset Game                     |
-| Ihsan Triyadi                  | 121140163 | Map + Asset Game                       |
-| Andreas Sihotang               | 121140168 | Main Programmer                        |
-| Ahmad Fadillah                 | 121140173 | Project Manager + Secondary Programmer |     
-| M Daffa Fahreza                | 121140178 | Enemmy + Asset Game + PPT              |
-| Daffa Abdurohman Jatmiko       | 121140181 | Secondary Programmer + UML             |          
+| Nama                       | NIM       | Kontribusi                             |
+| -------------------------- | --------- | -------------------------------------- |
+| Ghulwan Shihabuddin (lead) | 121140164 | Story + Asset Game                     |
+| Ihsan Triyadi              | 121140163 | Map + Asset Game                       |
+| Andreas Sihotang           | 121140168 | Main Programmer                        |
+| Ahmad Fadillah             | 121140173 | Project Manager + Secondary Programmer |
+| M Daffa Fahreza            | 121140178 | Enemmy + Asset Game + PPT              |
+| Daffa Abdurohman Jatmiko   | 121140181 | Secondary Programmer + UML             |
