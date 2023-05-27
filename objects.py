@@ -14,9 +14,6 @@ class ObjectsHandler:
         self.npc_pos = {}
 
         # Sprite Map
-        # add_sprite(SpriteObj(game))
-        # add_sprite(ApiMerah(game))
-        # add_sprite(ApiMerah(game, pos=(7, 2)))
         add_sprite(PantungUtuh(game, pos=(1.5, 3.5)))
         add_sprite(PantungUtuh(game, pos=(1.5, 6.5)))
         add_sprite(ApiBiru(game, pos=(1.5, 2.5)))
@@ -32,23 +29,18 @@ class ObjectsHandler:
         add_sprite(Candle(game, pos=(27, 5)))
         add_sprite(Candle(game, pos=(27.5, 4)))
         add_sprite(Candle(game, pos=(28, 5)))
-        
-
-        # add_sprite(ApiMerah(game, pos=(10.5, 7.5)))
 
         # NPC map
-        # add_npc(NPC(game))
-        # add_npc(NPC(game, pos=(4.5, 25.5)))
-        # add_npc(NPC(game, pos=(23, 28)))
-        # add_npc(NPC(game, pos=(21, 2)))
-        add_npc(NPC(game, pos=(3, 2)))
-        # add_npc(NPC(game, pos=(18, 12)))
-        
-        # add_npc(NPC(game))
-        # add_npc(NPC(game))
-        # add_npc(NPC(game))
-        # add_npc(NPC(game))
-        # add_npc(NPC(game))
+        add_npc(Pig(game, pos=(27.5, 2)))
+        add_npc(Mino(game, pos=(17, 23)))
+        add_npc(Mino(game, pos=(17, 21)))
+        add_npc(Flame(game, pos=(3, 27)))
+        add_npc(Flame(game, pos=(8, 9)))
+        add_npc(Flame(game, pos=(20, 4)))
+        add_npc(Tentara(game, pos=(24, 17)))
+        add_npc(Tentara(game, pos=(12, 1)))
+        add_npc(Tentara(game, pos=(16, 9)))
+        add_npc(NPC(game, pos=(12, 2.5)))
 
     def check_win(self):
         if not len(self.npc_pos):

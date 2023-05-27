@@ -15,8 +15,8 @@ class NPC(AnimatedSprite):
         self.speed = .03
         self.size = 10
         self.hp = 100
-        self.damage = 10
-        self.accu = .15
+        self.damage = 8
+        self.accu = .40
         self.alive = True
         self.pain = False
         self.ray_cast_value = False
@@ -204,8 +204,8 @@ class Tentara(NPC):
         self.speed = .03
         self.size = 10
         self.hp = 100
-        self.damage = 10
-        self.accu = .15
+        self.damage = 8
+        self.accu = .40
         self.alive = True
         self.pain = False
         self.ray_cast_value = False
@@ -213,7 +213,7 @@ class Tentara(NPC):
         self.player_search_trigger = False
         
 class Flame(NPC):
-    def __init__(self, game, path='sprite/NPC/TENTARA/0.png',
+    def __init__(self, game, path='sprite/NPC/Flame/0.png',
                  pos=(5.5, 5.5), scale=.5, shift=.48, animation_time=180):
         super().__init__(game, path, pos, scale, shift, animation_time)
         self.attack_images = self.get_images(self.path + '/shot')
@@ -226,8 +226,8 @@ class Flame(NPC):
         self.speed = .05
         self.size = 10
         self.hp = 80
-        self.damage = 18
-        self.accu = .15
+        self.damage = 10
+        self.accu = .30
         self.alive = True
         self.pain = False
         self.ray_cast_value = False
@@ -248,8 +248,8 @@ class Mino(NPC):
         self.speed = .03
         self.size = 10
         self.hp = 195
-        self.damage = 112
-        self.accu = .16
+        self.damage = 12
+        self.accu = .25
         self.alive = True
         self.pain = False
         self.ray_cast_value = False
@@ -272,7 +272,7 @@ class Pig(NPC):
         self.size = 10
         self.hp = 250
         self.damage = 15
-        self.accu = .17
+        self.accu = .2
         self.alive = True
         self.pain = False
         self.ray_cast_value = False

@@ -13,13 +13,12 @@ class Player:
         self.get_shot = False
         self.regen = False
         self.regen_time = 0
-        self.regen_cd = 800
+        self.regen_cd = 600
 
     def get_damage(self, damage):
         if self.hp > 0:
             self.get_shot = True
             self.hp -= damage
-            # self.game.object_renderer.player_damage()
             self.game.sound.player_pain.play()
             self.check_game_over()
 
@@ -27,7 +26,7 @@ class Player:
         if not self.regen and self.hp < PLAYER_MAX_HP:
             self.regen = True
             self.regen_time = pg.time.get_ticks()
-            self.hp += 1
+            self.hp += 7
 
     def cooldowns(self):
         current_time = pg.time.get_ticks()

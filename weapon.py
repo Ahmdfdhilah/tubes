@@ -14,7 +14,7 @@ class weapon(AnimatedSprite):
         self.reloading = False
         self.num_images = len(self.images)
         self.frame_counter = 0
-        self.damage = 40
+        self.damage = 80
         self.max_bullet = 10
         self.bullet_empty = False
         self.bullet = self.max_bullet
