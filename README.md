@@ -42,5 +42,5 @@ Math
 | Ihsan Triyadi              | 121140163 | Map + Asset Game                       |
 | Andreas Sihotang           | 121140168 | Main Programmer                        |
 | Ahmad Fadillah             | 121140173 | Project Manager + Secondary Programmer |
-| M Daffa Fahreza            | 121140178 | Enemmy + Asset Game + PPT              |
+| M Daffa Fahreza            | 121140178 | Enemy + Asset Game + PPT              |
 | Daffa Abdurohman Jatmiko   | 121140181 | Secondary Programmer + UML             |
